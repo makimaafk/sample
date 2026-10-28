@@ -124,7 +124,16 @@
         <div class="seal">E</div>
 
         <!-- DEDICATED OPEN BUTTON -->
-        <button class="open-btn" id="openBtn" type="button">
+        <button
+                class="open-btn"
+                id="openBtn"
+                type="button"
+                onclick="
+    document.getElementById('envelope').classList.add('open');
+    document.getElementById('hint').textContent = 'Your invitation is open!';
+    this.style.display = 'none';
+  "
+        >
             OPEN INVITATION
         </button>
     </div>
