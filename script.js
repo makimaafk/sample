@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 1; i <= 18; i++) {
             const item = document.createElement("li");
-            item.textContent = ${label} ${i};
+            item.textContent = '${label} ${i}';
             list.appendChild(item);
         }
     }
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 20 SAMPLE GALLERY PHOTOS
     const photoURLs = Array.from({ length: 20 }, function (_, i) {
-        return https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80&sig=${i};
+        return 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80&sig=${i}';
     });
 
     // CREATE GALLERY THUMBNAILS
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const img = document.createElement("img");
 
             img.src = url;
-            img.alt = Birthday photo ${index + 1};
+            img.alt = 'Birthday photo ${index + 1}';
             img.loading = "lazy";
 
             img.addEventListener("click", function () {
@@ -130,11 +130,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!largePhoto) return;
 
         largePhoto.src = photoURLs[photoIndex];
-        largePhoto.alt = Birthday photo ${photoIndex + 1};
+        largePhoto.alt = 'Birthday photo ${photoIndex + 1}';
 
         if (photoCounter) {
             photoCounter.textContent =
-                ${photoIndex + 1} / ${photoURLs.length};
+               ' ${photoIndex + 1} / ${photoURLs.length}';
         }
     }
 
