@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09152f">
+    <title>Ericka's 18th Birthday Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="stars"></div>
+
+<main class="container">
+    <p class="eyebrow">A SPECIAL INVITATION</p>
+    <h1>You're <span>Invited</span></h1>
+    <p class="subtitle">A night of memories, love, and golden wishes</p>
+
+    <p id="hint">Tap the button to open your invitation</p>
+
+    <!-- ENVELOPE -->
+    <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+
+        <div class="letter" id="letter">
+
+            <!-- PAGE 1 -->
+            <section class="page active">
+                <p class="eyebrow">WITH A GRATEFUL HEART</p>
+                <h2>You're Invited!</h2>
+                <p class="script">to my 18th birthday</p>
+                <div class="gold-line"></div>
+                <p class="message">
+                    Eighteen years of blessings, laughter, and unforgettable memories.
+                    I would be delighted to celebrate this special milestone with you.
+                </p>
+                <p class="signature">Love, Ericka</p>
+                <button class="primary-btn" onclick="changePage(1)">Continue →</button>
+                <p class="page-number">01 / 04</p>
+            </section>
+
+            <!-- PAGE 2 -->
+            <section class="page">
+                <p class="eyebrow">A CELEBRATION OF LOVE</p>
+                <h2>18 Treasures & Gifts</h2>
+                <p class="intro">A collection of wishes and thoughtful surprises.</p>
+
+                <div class="list-columns">
+                    <div class="list-card">
+                        <h3>✦ 18 Treasures</h3>
+                        <ol id="treasures"></ol>
+                    </div>
+                    <div class="list-card">
+                        <h3>✧ 18 Gifts</h3>
+                        <ol id="gifts"></ol>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button class="secondary-btn" onclick="changePage(-1)">← Previous</button>
+                    <button class="primary-btn" onclick="changePage(1)">Next →</button>
+                </div>
+                <p class="page-number">02 / 04</p>
+            </section>
+
+            <!-- PAGE 3 -->
+            <section class="page">
+                <p class="eyebrow">LIGHTS, WISHES & MEMORIES</p>
+                <h2>18 Candles & Shots</h2>
+                <p class="intro">Each participant is part of this special celebration.</p>
+
+                <div class="list-columns">
+                    <div class="list-card">
+                        <h3>18 Candles</h3>
+                        <ol id="candles"></ol>
+                    </div>
+                    <div class="list-card">
+                        <h3>18 Shots</h3>
+                        <ol id="shots"></ol>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button class="secondary-btn" onclick="changePage(-1)">← Previous</button>
+                    <button class="primary-btn" onclick="changePage(1)">Next →</button>
+                </div>
+                <p class="page-number">03 / 04</p>
+            </section>
+
+            <!-- PAGE 4 -->
+            <section class="page">
+                <p class="eyebrow">WITH LOVE AND APPRECIATION</p>
+                <h2>18 Roses</h2>
+                <p class="intro">Eighteen roses, each carrying a special meaning.</p>
+
+                <div class="list-card rose-card">
+                    <ol id="roses"></ol>
+                </div>
+
+                <div class="event-details">
+                    <p class="script">Save the Date</p>
+                    <p><strong>November 13, 2026</strong></p>
+                    <p>4:00 PM onwards</p>
+                    <p>Cayaoan, Camiling, Tarlac</p>
+                    <p class="dress-code">Dress Code: Formal / Semi-Formal</p>
+                </div>
+
+                <p class="message">I can't wait to celebrate this milestone with you!</p>
+                <p class="signature">With love, Ericka</p>
+
+                <div class="final-buttons">
+                    <button class="secondary-btn" onclick="showGallery()">View Photos</button>
+                    <button class="secondary-btn" onclick="changePage(-1)">← Previous</button>
+                    <button class="exit-btn" onclick="exitInvitation()">Close Invitation ✕</button>
+                </div>
+                <p class="page-number">04 / 04</p>
+            </section>
+
+        </div>
+
+        <!-- ENVELOPE DECORATION -->
+        <div class="envelope-front"></div>
+        <div class="flap"></div>
+        <div class="seal">E</div>
+
+        <!-- DEDICATED OPEN BUTTON -->
+        <button class="open-btn" id="openBtn" type="button">
+            OPEN INVITATION
+        </button>
+    </div>
+
+    <p class="footer-note">NAVY BLUE · GOLD · A NIGHT TO REMEMBER</p>
+</main>
+
+<!-- PHOTO GALLERY -->
+<div class="modal" id="gallery" aria-hidden="true">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeGallery()" aria-label="Close gallery">✕</button>
+        <p class="eyebrow">PRECIOUS MOMENTS</p>
+        <h2>Photo Gallery</h2>
+        <p class="intro">Tap a photo to view it larger.</p>
+        <div class="photo-grid" id="photoGrid"></div>
+        <button class="secondary-btn" onclick="closeGallery()">Close Gallery</button>
+    </div>
+</div>
+
+<!-- LARGE PHOTO VIEWER -->
+<div class="photo-viewer" id="photoViewer" aria-hidden="true">
+    <button class="viewer-close" onclick="closePhoto()">✕</button>
+    <button class="viewer-arrow prev-photo" onclick="movePhoto(-1)">‹</button>
+    <img id="largePhoto" src="" alt="Birthday photo">
+    <button class="viewer-arrow next-photo" onclick="movePhoto(1)">›</button>
+    <p id="photoCounter" class="photo-counter"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
